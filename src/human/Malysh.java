@@ -6,10 +6,10 @@ public class Malysh extends Human implements Sitting{
     public Malysh(String name, Sex sex){
         super(name, sex);
     }
-    @Override
-    public String toString(){
-        return super.name;
+
+    public Malysh() {
     }
+
     @Override
     public String sit(){
         return Time.WAS_TIME + " садиться";

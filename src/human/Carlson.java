@@ -5,8 +5,11 @@ import Item.Item;
 public class Carlson extends Human implements Flyable,Sitting{
     public Carlson(String name, Sex sex){
         super(name, sex);
-
     }
+
+    public Carlson() {
+    }
+
     @Override
     public String toString(){
         return super.name;

@@ -8,10 +8,20 @@ public class Main {
         Item houseOnRoof = new Item(" домик на крыше", Size.MIDDLE);
         Item table = new Item("стол.", Size.BIG);
 
-        System.out.println(malysh.think() + ", что" + Time.NEVER + malysh.disagree() + " Но " + How.HARD + malysh.standHimGround());
-        System.out.println(carlson.angry() + " и" + carlson.flyAway() + houseOnRoof + " и" + carlson.flewBack() + "когда " + malysh.beeped(Counted.TWICE));
-        System.out.println('"' + malysh.phraseComeSoon()+ '"' + ", потому что" + malysh.sit() + " за " + table);
+        try {
+            if (malysh.isNull()){
+                throw new EmptyObjectException("Объект класса Malysh пустой");
+            }
+            if (carlson.isNull()){
+                throw new EmptyObjectException("Объект класса Carlson пустой");
+            }
 
+            System.out.println(malysh.think() + ", что" + Time.NEVER + malysh.disagree() + " Но " + How.HARD + malysh.standHimGround());
+            System.out.println(carlson.angry() + " и" + carlson.flyAway() + houseOnRoof + " и" + carlson.flewBack() + "когда " + malysh.beeped(Counted.TWICE));
+            System.out.println('"' + malysh.phraseComeSoon() + '"' + ", потому что" + malysh.sit() + " за " + table);
+        } catch (EmptyObjectException e) {
+            System.out.println(e.getMessage());
+        }
 
     }
 }
